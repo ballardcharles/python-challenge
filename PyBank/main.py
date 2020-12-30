@@ -12,9 +12,17 @@ with open(budget_csv) as csvfile:
     csvreader = csv.reader(csvfile, delimiter = ",")
 
     csv_header = next(csvfile)
+
+    months = list(csvreader)
+    count = len(months)
+
+with open(budget_csv) as csvfile:
+    csvreader = csv.reader(csvfile, delimiter = ",")
+
+    csv_header = next(csvfile)
     total = 0
     for row in csvreader:
         total += int(row[1])
 
-print(f"Total: ${total}")
-       
+print(f"Total Months: {count}")
+print(f"Total: ${total}") 
