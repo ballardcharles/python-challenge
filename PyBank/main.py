@@ -50,6 +50,6 @@ with open(budget_csv) as csvfile:
 
 print(f"Total Months: {num_dates}")
 print(f"Total: ${total_profit_loss}") 
-print(f"Average Change: ${average_change}")
+print(f"Average Change: ${round(average_change, 2)}")
 print(f"Greatest Increase: {max_change}")
 print(f"Greatest Decrease: {min_change}")
