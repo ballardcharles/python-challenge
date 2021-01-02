@@ -45,3 +45,19 @@ print(f"Total: ${total_profit_loss}")
 print(f"Average Change: ${round(average_change, 2)}")
 print(f"Greatest Increase in Profits: {max_change_date} (${max_change})")
 print(f"Greatest Decrease in Profits: {min_change_date} (${min_change})")
+
+# Specify the file to write to
+output = os.path.join("Analysis", "PyBank.txt")
+
+# Open the file using "write" mode. Specify the variable to hold the contents
+with open(output, 'w') as txtfile:
+
+    txtfile.write("Financial Analysis \n")
+    txtfile.write("--------------------------- \n")
+    txtfile.write(f"Total Months: {num_dates}\n")
+    txtfile.write(f"Total: ${total_profit_loss}\n")
+    txtfile.write(f"Average Change: ${round(average_change, 2)}\n")
+    txtfile.write(f"Greatest Increase in Profits: {max_change_date} (${max_change})\n")
+    txtfile.write(f"Greatest Decrease in Profits: {min_change_date} (${min_change})\n")
+
+    
