@@ -5,6 +5,7 @@ import csv
 # create path to read csv file
 budget_csv = os.path.join("Resources", "budget_data.csv")
 
+# open csv file to analysis data
 with open(budget_csv) as csvfile:
     csvreader = csv.reader(csvfile, delimiter = ",")
     
@@ -27,6 +28,7 @@ with open(budget_csv) as csvfile:
     for row in range(1,len(profit_loss)):
         change.append(profit_loss[row] - profit_loss[row-1])
 
+        # find the greatest increase and decrease in profits 
         max_change = max(change)
         min_change = min(change)
 
@@ -34,6 +36,7 @@ with open(budget_csv) as csvfile:
         # used "-1" to accound for added "0" in change list
         average_change = total_change / (len(change)-1)
 
+        # find the corresponding date to the greatest increase and decrease in profit
         max_change_date = str(date[change.index(max(change))])
         min_change_date = str(date[change.index(min(change))])
 
@@ -52,6 +55,7 @@ output = os.path.join("Analysis", "PyBank.txt")
 # Open the file using "write" mode. Specify the variable to hold the contents
 with open(output, 'w') as txtfile:
 
+    # write each line of the analysis to the text file
     txtfile.write("Financial Analysis \n")
     txtfile.write("--------------------------- \n")
     txtfile.write(f"Total Months: {num_dates}\n")
