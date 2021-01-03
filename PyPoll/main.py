@@ -26,10 +26,13 @@ with open(poll_csv) as csvfile:
             candidates.append(row[2])
             candidate_votes.append(1)
 
+max_votes = candidates[candidate_votes.index(max(candidate_votes))]
+
 print(vote_total)
-print(candidates)
-print(candidate_votes)
-print(f"{candidates[0]}: {candidate_votes[0]/vote_total*100:.3f}% ({candidate_votes[0]})")
-print(f"{candidates[1]}: {candidate_votes[1]/vote_total*100:.3f}% ({candidate_votes[1]})")
-print(f"{candidates[2]}: {candidate_votes[2]/vote_total*100:.3f}% ({candidate_votes[2]})")
-print(f"{candidates[3]}: {candidate_votes[3]/vote_total*100:.3f}% ({candidate_votes[3]})")
+# print(f"{candidates[0]}: {candidate_votes[0]/vote_total*100:.3f}% ({candidate_votes[0]})")
+# print(f"{candidates[1]}: {candidate_votes[1]/vote_total*100:.3f}% ({candidate_votes[1]})")
+# print(f"{candidates[2]}: {candidate_votes[2]/vote_total*100:.3f}% ({candidate_votes[2]})")
+# print(f"{candidates[3]}: {candidate_votes[3]/vote_total*100:.3f}% ({candidate_votes[3]})")
+for row in range(len(candidates)):
+    print(f"{candidates[row]}: {candidate_votes[row]/vote_total*100:.3f}% ({candidate_votes[row]})")
+print(max_votes)
