@@ -27,4 +27,9 @@ with open(poll_csv) as csvfile:
             candidate_votes.append(1)
 
 print(vote_total)
+print(candidates)
 print(candidate_votes)
+print(f"{candidates[0]}: {candidate_votes[0]/vote_total*100:.3f}% ({candidate_votes[0]})")
+print(f"{candidates[1]}: {candidate_votes[1]/vote_total*100:.3f}% ({candidate_votes[1]})")
+print(f"{candidates[2]}: {candidate_votes[2]/vote_total*100:.3f}% ({candidate_votes[2]})")
+print(f"{candidates[3]}: {candidate_votes[3]/vote_total*100:.3f}% ({candidate_votes[3]})")
