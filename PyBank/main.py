@@ -40,15 +40,7 @@ with open(budget_csv) as csvfile:
         max_change_date = str(date[change.index(max(change))])
         min_change_date = str(date[change.index(min(change))])
 
-# print the data as outlined 
-# print("Financial Analysis")
-# print("-------------------------")
-# print(f"Total Months: {num_dates}")
-# print(f"Total: ${total_profit_loss}") 
-# print(f"Average Change: ${round(average_change, 2)}")
-# print(f"Greatest Increase in Profits: {max_change_date} (${max_change})")
-# print(f"Greatest Decrease in Profits: {min_change_date} (${min_change})")
-
+# create summary data variable to hold profit/loss analysis
 summary_data = (
     f"Financial Analysis\n"
     f"-------------------------\n"
@@ -58,7 +50,7 @@ summary_data = (
     f"Greatest Increase in Profits: {max_change_date} (${max_change})\n"
     f"Greatest Decrease in Profits: {min_change_date} (${min_change})\n"
 )
-
+# print profit/loss summary to terminal
 print(summary_data)
 
 # Specify the file to write to
@@ -68,11 +60,3 @@ output = os.path.join("Analysis", "PyBank.txt")
 with open(output, 'w') as txtfile:
 
     txtfile.write(summary_data)
-    # # write each line of the analysis to the text file
-    # txtfile.write("Financial Analysis \n")
-    # txtfile.write("--------------------------- \n")
-    # txtfile.write(f"Total Months: {num_dates}\n")
-    # txtfile.write(f"Total: ${total_profit_loss}\n")
-    # txtfile.write(f"Average Change: ${round(average_change, 2)}\n")
-    # txtfile.write(f"Greatest Increase in Profits: {max_change_date} (${max_change})\n")
-    # txtfile.write(f"Greatest Decrease in Profits: {min_change_date} (${min_change})\n")
