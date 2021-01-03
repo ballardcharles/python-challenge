@@ -33,7 +33,7 @@ with open(budget_csv) as csvfile:
         min_change = min(change)
 
         total_change = sum(change)
-        # used "-1" to accound for added "0" in change list
+        # calculate average change in profit
         average_change = total_change / (len(change)-1)
 
         # find the corresponding date to the greatest increase and decrease in profit
@@ -41,13 +41,25 @@ with open(budget_csv) as csvfile:
         min_change_date = str(date[change.index(min(change))])
 
 # print the data as outlined 
-print("Financial Analysis")
-print("-------------------------")
-print(f"Total Months: {num_dates}")
-print(f"Total: ${total_profit_loss}") 
-print(f"Average Change: ${round(average_change, 2)}")
-print(f"Greatest Increase in Profits: {max_change_date} (${max_change})")
-print(f"Greatest Decrease in Profits: {min_change_date} (${min_change})")
+# print("Financial Analysis")
+# print("-------------------------")
+# print(f"Total Months: {num_dates}")
+# print(f"Total: ${total_profit_loss}") 
+# print(f"Average Change: ${round(average_change, 2)}")
+# print(f"Greatest Increase in Profits: {max_change_date} (${max_change})")
+# print(f"Greatest Decrease in Profits: {min_change_date} (${min_change})")
+
+summary_data = (
+    f"Financial Analysis\n"
+    f"-------------------------\n"
+    f"Total Months: {num_dates}\n"
+    f"Total: ${total_profit_loss}\n"
+    f"Average Change: ${round(average_change, 2)}\n"
+    f"Greatest Increase in Profits: {max_change_date} (${max_change})\n"
+    f"Greatest Decrease in Profits: {min_change_date} (${min_change})\n"
+)
+
+print(summary_data)
 
 # Specify the file to write to
 output = os.path.join("Analysis", "PyBank.txt")
@@ -55,13 +67,12 @@ output = os.path.join("Analysis", "PyBank.txt")
 # Open the file using "write" mode. Specify the variable to hold the contents
 with open(output, 'w') as txtfile:
 
-    # write each line of the analysis to the text file
-    txtfile.write("Financial Analysis \n")
-    txtfile.write("--------------------------- \n")
-    txtfile.write(f"Total Months: {num_dates}\n")
-    txtfile.write(f"Total: ${total_profit_loss}\n")
-    txtfile.write(f"Average Change: ${round(average_change, 2)}\n")
-    txtfile.write(f"Greatest Increase in Profits: {max_change_date} (${max_change})\n")
-    txtfile.write(f"Greatest Decrease in Profits: {min_change_date} (${min_change})\n")
-
-    
+    txtfile.write(summary_data)
+    # # write each line of the analysis to the text file
+    # txtfile.write("Financial Analysis \n")
+    # txtfile.write("--------------------------- \n")
+    # txtfile.write(f"Total Months: {num_dates}\n")
+    # txtfile.write(f"Total: ${total_profit_loss}\n")
+    # txtfile.write(f"Average Change: ${round(average_change, 2)}\n")
+    # txtfile.write(f"Greatest Increase in Profits: {max_change_date} (${max_change})\n")
+    # txtfile.write(f"Greatest Decrease in Profits: {min_change_date} (${min_change})\n")
