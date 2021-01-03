@@ -43,10 +43,10 @@ print("------------------------")
 print(f"Winner: {winner}")
 print("------------------------")
 
-# Specify the file to write to
+# # Specify the file to write to
 output = os.path.join("Analysis", "PyPoll.txt")
 
-# Open the file using "write" mode. Specify the variable to hold the contents.  Write election results to txt file
+# # Open the file using "write" mode. Specify the variable to hold the contents.  Write election results to txt file
 with open(output, 'w') as txtfile:
     txtfile.write("Election Results\n")
     txtfile.write("------------------------\n")
